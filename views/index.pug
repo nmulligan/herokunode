@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Please enter a value:
+  form(action='/addvalue', method='POST')
+    input(id='value', name='value', type='text', class='form-control', required, autofocus)
+    button(id='submitValue', type='submit') Submit
+
+  p Current values:
+  for entity in entities
+    p #{entity}
